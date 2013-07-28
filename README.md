@@ -17,4 +17,9 @@ BBB - 100 - Additional info 2<br>
 BBB - 20 - Additional info 3
 </code><br><br>
 You can run the program on the terminal by :<br>
-<code>$ perl hisab_kitab.pl example.txt</code>
+<ul>Perl
+<li><code>$ perl hisab_kitab.pl example.txt</code></li>
+</ul>
+<ul>Ruby
+<li><code>$ ruby hisab_kitab.rb example.txt</code></li>
+</ul>
