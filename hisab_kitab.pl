@@ -9,7 +9,7 @@ my $total;
 
 while(<>) {
 	my @spl = split (' - ');
-	$individuals->{$spl[0]} += $spl[1];
+	$individuals->{$spl[0]} += $spl[1] if $spl[1];
 }
 
 printDash();
