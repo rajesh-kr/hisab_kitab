@@ -8,8 +8,10 @@ my $toPay;
 my $total;
 
 while(<>) {
+	chomp;
+	next unless validateInput($_);
 	my @spl = split (' - ');
-	$individuals->{$spl[0]} += $spl[1] if $spl[1];
+	$individuals->{$spl[0]} += $spl[1]; 
 }
 
 printDash();
@@ -34,7 +36,15 @@ for my $k (keys %$individuals) {
 }
 printDash();
 
-sub printDash
-{
+sub printDash {
 	print "-------------------------\n";
+}
+
+sub validateInput {
+	my $input = shift;
+
+	return 1 if $input =~ m/^\w+? - \d+?(?: - .*)?$/;
+
+	warn("Validation not passed : $input. Ignoring.");
+	return 0;
 }
