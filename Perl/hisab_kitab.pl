@@ -14,6 +14,9 @@ while(<>) {
 	$individuals->{$spl[0]} += $spl[1]; 
 }
 
+my $totalKeys = scalar keys %$individuals;
+die("Invalid Values in file.") unless $totalKeys > 0;
+
 printDash();
 print "Individual Kharcha :\n";
 printDash();
@@ -29,7 +32,8 @@ printDash();
 print "Each one to pay : \n";
 printDash();
 
-$total /= 3;
+
+$total /= $totalKeys; 
 for my $k (keys %$individuals) {
 	$toPay->{$k} = $total - $individuals->{$k};
 	print "$k : Rs. ", sprintf("%.0f", $toPay->{$k}), "\n";

@@ -11,6 +11,14 @@ while(line = input.gets)
 	individuals[arr[0]] = individuals[arr[0]].to_i() + arr[1].to_i() 
 end
 
+len = individuals.length
+if len <= 0
+	puts '#' * 25
+	puts "INVALID INPUT FILE"
+	puts '#' * 25
+	Process.exit(0)
+end
+
 puts '-' * 25
 puts "Individual Kharcha :"
 puts '-' * 25
@@ -27,7 +35,9 @@ puts '-' * 25
 puts "Each one to pay :"
 puts '-' * 25
 
-total = total / 3.0
+
+total = total * 1.0 / len
+
 for name, amount in individuals
 	toPay[name] = total - amount
 	toPay[name] = sprintf("%.0f", toPay[name])
